@@ -7,8 +7,8 @@
 
 This is a webpage designed to be a random password generator, created using HTML, CSS, and JavaScript
 
-GitHub repository: 
-Site Link: 
+GitHub repository: https://github.com/ClaireEberle/Password-Generator
+Site Link: https://claireeberle.github.io/Password-Generator/
 
 ## Installation
 
