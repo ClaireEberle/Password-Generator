@@ -1,5 +1,8 @@
 # Password-Generator
 
+<img width="840" alt="password-generator" src="https://user-images.githubusercontent.com/116858582/209280097-9b3b826c-599f-4cfc-b160-98fbd4e11a5a.png">
+
+
 ## Description
 
 This is a webpage designed to be a random password generator, created using HTML, CSS, and JavaScript
