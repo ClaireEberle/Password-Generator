@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-var specialCharacters = ["!", "*", "$", "%", "?", "#"];
+var specialCharacters = ['!', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', ']', '^', '_', '`', '{', '|', '}', '~'];
 var addspecialCharacters;
 var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var length = '';
@@ -15,93 +15,72 @@ var result = '';
 var availableChars;
 
 
-
-// Write password to the #password input
+// Writes the password to the password input box
 function writePassword() {
-  //password length (8-128)
-  //password uppercase, lowercase, numeric, special characters
-  //at least one type chosen
-  var password = passy();
+  generatePassword();
+  passcombine();
+  var password = result;
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Adds event listener to generate button
 generateBtn.addEventListener("click", writePassword) 
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
-// psudocoding
+//collects criteria for the possible characters in pass word
 function generatePassword () {
-  length = prompt("How many characters? (you may choose 8-24)");
-  
-//prompt for length of the password
+  length = prompt("How many characters? (you may choose 8-128)");
+  if ((length < 8)||(length > 128)) {
+    prompt("Please enter a valid number");
+  if (!length){
+      alert("ok :(")
+    }
+  }
 //check if valid length, if wrong promp again
 
 addspecialCharacters = confirm("Special characters?");
  if (addspecialCharacters) {
   availableChars = specialCharacters;
  }
- console.log(availableChars);
+//  console.log(availableChars);
 
 addnumericCharacters = confirm("Numbers?");
 if (addnumericCharacters) {
   availableChars = numericCharacters.concat(availableChars)
 }
-console.log(availableChars)
+// console.log(availableChars)
 addupperCase = confirm("Upper Case?");
 if (addupperCase) {
   availableChars = upperCase.concat(availableChars);
 }
-console.log(availableChars);
+// console.log(availableChars);
 addlowerCase = confirm("Lower Case?");
 if (addlowerCase) {
   availableChars = lowerCase.concat(availableChars);
 }
-console.log(availableChars);
+// console.log(availableChars);
 if (!addspecialCharacters) {
   availableChars.pop();
 }
+//validates that at lease one is selected
+if ((!addspecialCharacters)&&(!addupperCase)&&(addnumericCharacters)&&(addlowerCase)){
+  alert("You must choose a type of character")
+}
 return;
 }
-// if (addspecialCharacters && addnumericCharacters) {
-//   availableChars = specialCharacters.concat(numericCharacters)
-// }
-// console.log(availableChars)
-
-//ask for different types of characters
-//confirm x 4 for each type
-//add to available chars
-//validates they selected at least one
-
-//seperate function
-//iterate length number of times
-//select random char from available chars
-//add to result
-
-// function passwordlength (length) {
-//   var charlength = availableChars.length;
-//   for ( var i=0; i<length; i++) {
-//     result += availableChars[Math.floor(Math.random() * charlength)];
-//     console.log(result);
-//   }
   
-// }
-function randomchar () {
-  result = availableChars[Math.floor(Math.random()*availableChars.length)];
-  console.log(result)
-}
 
-function passy() {
+// function randomchar () {
+//   result = availableChars[Math.floor(Math.random()*availableChars.length)];
+//   console.log(result)
+// }
+
+function passcombine() {
   for (i = 0; i<length; i++){
     result += availableChars[Math.floor(Math.random()*availableChars.length)]
   }
-  console.log(result)
+  return;
 }
 
 // function passwordlength () {
@@ -112,9 +91,9 @@ function passy() {
 // }
 // var number = availableChars.random(availableChars.length)
 
-generatePassword();
+// generatePassword();
 // passwordlength();
-randomchar();
-passy(length);
+// randomchar();
+// passcombine();
 // return result
-writePassword();
+// writePassword();
