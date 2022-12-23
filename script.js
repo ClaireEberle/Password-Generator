@@ -34,7 +34,8 @@ function generatePassword () {
   if ((length < 8)||(length > 128)) {
     prompt("Please enter a valid number");
   if (!length){
-      alert("ok :(")
+      alert("ok :(");
+      return;
     }
   }
 //check if valid length, if wrong promp again
@@ -64,7 +65,7 @@ if (!addspecialCharacters) {
   availableChars.pop();
 }
 //validates that at lease one is selected
-if ((!addspecialCharacters)&&(!addupperCase)&&(addnumericCharacters)&&(addlowerCase)){
+if ((!addspecialCharacters)&&(!addupperCase)&&(!addnumericCharacters)&&(!addlowerCase)){
   alert("You must choose a type of character")
 }
 return;
