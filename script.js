@@ -15,10 +15,12 @@ var result = '';
 var availableChars;
 
 
+
 // Writes the password to the password input box
 function writePassword() {
   generatePassword();
   passcombine();
+
   var password = result;
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
@@ -39,6 +41,7 @@ function generatePassword () {
     }
   }
 //check if valid length, if wrong promp again
+result = ''; // resets password
 
 addspecialCharacters = confirm("Special characters?");
  if (addspecialCharacters) {
